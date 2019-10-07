@@ -1,5 +1,5 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@include file="/WEB-INF/view/template/header.jsp"%>
+<%@include file="/WEB-INF/views/template/header.jsp"%>
 
 
 <div class="container-wrapper">
@@ -18,6 +18,7 @@
                 <th>Category</th>
                 <th>Condition</th>
                 <th>Price</th>
+                <th>Details</th>
             </tr>
             </thead>
             <c:forEach items="${products}" var="product">
@@ -27,8 +28,9 @@
                     <td>${product.productCategory}</td>
                     <td>${product.productCondition}</td>
                     <td>${product.productPrice} USD</td>
+                    <td><span class="glyphicon glyphicon-info-sign"></span></td>
                 </tr>
             </c:forEach>
         </table>
 
-<%@include file="/WEB-INF/view/template/footer.jsp" %>
+<%@include file="/WEB-INF/views/template/footer.jsp" %>
