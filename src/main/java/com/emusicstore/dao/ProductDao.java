@@ -1,5 +1,6 @@
 package com.emusicstore.dao;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,7 @@ public class ProductDao {
 	
 	public List<Product> getProductList() {
 	Product p1 = new Product();
+	p1.setProductId("p123");
 	p1.setProductName("Gtx2080Ti");
 	p1.setProductCategory("Graphics card");
 	p1.setProductDescription("Graphics card based on turing architecture haveing 11 GB RAM");
@@ -21,6 +23,7 @@ public class ProductDao {
 	p1.setProductManufacturer("Nvdia");
 	
 	Product p3 = new Product();
+	p3.setProductId("p125");
 	p3.setProductName("Gtx2080");
 	p3.setProductCategory("Graphics card");
 	p3.setProductDescription("Graphics card based on turing architecture having 8 GB RAM");
@@ -31,6 +34,7 @@ public class ProductDao {
 	p3.setProductManufacturer("Nvdia");
 	
 	Product p2 = new Product();
+	p2.setProductId("p786");
 	p2.setProductName("Gtx2060");
 	p2.setProductCategory("Graphics card");
 	p2.setProductDescription("Graphics card based on turing architecture having 6 GB RAM");
@@ -47,6 +51,15 @@ public class ProductDao {
 	
 	return productList;
 	
+	}
+
+	public Product getProductById(String productId) throws IOException {
+		for(Product product: getProductList()) {
+			if(product.getProductId().equals(productId)) {
+				return product;
+			}
+		}
+		throw new IOException("No product found");
 	}
 	
     
