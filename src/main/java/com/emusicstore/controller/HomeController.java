@@ -72,4 +72,11 @@ public class HomeController {
 		
 	}
 	
+	@RequestMapping("/admin/productInventory/deleteProduct/{id}")
+	public String deleteProduct(@PathVariable String id,Model model) throws IOException {
+		
+		productDao.deleteProduct(id);
+		return "redirect:/admin/productInventory";
+	}
+	
 }
