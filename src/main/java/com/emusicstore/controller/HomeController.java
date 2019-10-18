@@ -1,6 +1,7 @@
 package com.emusicstore.controller;
 
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class HomeController {
 	
 	@Autowired
 	private ProductDao productDao;
+	
+	private Path path; 
 	
 	@RequestMapping("/")
 	public String home() {
